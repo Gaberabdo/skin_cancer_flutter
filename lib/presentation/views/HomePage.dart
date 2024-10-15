@@ -453,8 +453,9 @@ class HomeScreen extends StatelessWidget {
                                                         .colorScheme
                                                         .primary,
                                                     child: Center(
-                                                      child: Text(style: TextStyle(color: Theme.of(context).colorScheme.onPrimary, fontWeight: FontWeight.bold),
-                                                          "Benign"),
+                                                      child: state.isMalignant ? Text(style: TextStyle(color: Theme.of(context).colorScheme.onPrimary, fontWeight: FontWeight.bold),
+                                                          "Benign") : Text(style: TextStyle(color: Theme.of(context).colorScheme.onPrimary, fontSize: 10, fontWeight: FontWeight.bold),
+                                                          "Malginant"),
                                                     ))),],),
                                             SizedBox(height: 5,),
                                             Row(children: [ClipRRect(
