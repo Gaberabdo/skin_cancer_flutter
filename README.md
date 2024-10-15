@@ -1,16 +1,30 @@
-# tfserving_example_app
+# Flutter Skin Cancer screening
 
-A new Flutter project.
+This app demonstrates the use of Tflite model in flutter and the image classification inference via cloud model.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Table of contents
 
-A few resources to get you started if this is your first Flutter project:
+- [Quick start](#quick-start)
+- [What's included](#whats-included)
+- [Bugs and feature requests](#bugs-and-feature-requests)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Quick start
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This is a normal flutter app. You should follow the instructions in the [official documentation](https://flutter.io/docs/get-started/install).
+
+## What's included
+
+
+<p float="left">
+  <img src="https://github.com/HenHar/tfServing-inference-flutter/blob/main/assets_readme/Screenshot_home.jpg" width="100" />
+  <img src="https://github.com/HenHar/tfServing-inference-flutter/blob/main/assets_readme/Screenshot_home.jpg" width="100" /> 
+  <img src="https://github.com/HenHar/tfServing-inference-flutter/blob/main/assets_readme/Screenshot_home.jpg" width="100" />
+</p>
+
+
+* test
+
+## Bugs and feature requests
+
+Have a bug or a feature request? Please first read the [issue guidelines](https://github.com/CONTRIBUTING.md) and search for existing and closed issues. If your problem or idea is not addressed yet, [please open a new issue](https://github.com/HenHar/skin_cancer_flutter/issues/new).
