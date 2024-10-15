@@ -17,9 +17,9 @@ This is a normal flutter app. You should follow the instructions in the [officia
 
 
 <p float="left">
-  <img src="https://github.com/HenHar/skin_cancer_flutter/blob/main/assets_readme/Screenshot_home.jpg" width="300" />
-  <img src="https://github.com/HenHar/skin_cancer_flutter/blob/main/assets_readme/Screenshot_result1.jpg" width="300" /> 
-  <img src="https://github.com/HenHar/skin_cancer_flutter/blob/main/assets_readme/Screenshot_result2.jpg" width="300" />
+  <img src="https://github.com/HenHar/skin_cancer_flutter/blob/main/assets_readme/Screenshot_home.jpg" width="250" />
+  <img src="https://github.com/HenHar/skin_cancer_flutter/blob/main/assets_readme/Screenshot_result1.jpg" width="250" /> 
+  <img src="https://github.com/HenHar/skin_cancer_flutter/blob/main/assets_readme/Screenshot_result2.jpg" width="250" />
 </p>
 
 
