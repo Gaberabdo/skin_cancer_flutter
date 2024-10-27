@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "931353286709",
+    "project_id": "skin-cancer-acc69",
+    "storage_bucket": "skin-cancer-acc69.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931353286709:android:4a2f6405b45d30de3c397c",
+        "android_client_info": {
+          "package_name": "com.example.tfserving_example_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDv1CIoS3UrTsqZz3c-BJHvW6lh3lS8Qxw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

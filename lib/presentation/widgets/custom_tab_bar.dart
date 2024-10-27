@@ -17,30 +17,30 @@ class _PersistentTabScreenState extends State<PersistentTabScreen> {
       PersistentTabController(initialIndex: 0);
 
   List<PersistentTabConfig> _tabs() => [
-    PersistentTabConfig(
-      screen: HomePage(),
-      item: ItemConfig(
-        activeForegroundColor: Colors.black,
-        icon: const Icon(Icons.home),
-        title: "Home",
-      ),
-    ),
-    PersistentTabConfig(
-      screen: const SettingPage(),
-      item: ItemConfig(
-        activeForegroundColor: Colors.black,
-        icon: const Icon(Icons.settings),
-        title: "Setting",
-      ),
-    ),
-    PersistentTabConfig(
-      screen: const InfoPage(),
-      item: ItemConfig(
-        activeForegroundColor: Colors.black,
-        icon: const Icon(Icons.settings),
-        title: "Info",
-      ),
-    ),
+        PersistentTabConfig(
+          screen: HomePage(),
+          item: ItemConfig(
+            activeForegroundColor: Colors.black,
+            icon: const Icon(Icons.home),
+            title: "Home",
+          ),
+        ),
+        PersistentTabConfig(
+          screen: const SettingPage(),
+          item: ItemConfig(
+            activeForegroundColor: Colors.black,
+            icon: const Icon(Icons.settings),
+            title: "Setting",
+          ),
+        ),
+        PersistentTabConfig(
+          screen: const InfoPage(),
+          item: ItemConfig(
+            activeForegroundColor: Colors.black,
+            icon: const Icon(Icons.settings),
+            title: "Info",
+          ),
+        ),
       ];
 
   @override
@@ -53,7 +53,7 @@ class _PersistentTabScreenState extends State<PersistentTabScreen> {
         // Default is true.
         resizeToAvoidBottomInset: true,
         // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
-        stateManagement: false,
+        stateManagement: true,
         // Default is true.
         popAllScreensOnTapOfSelectedTab: true,
         popActionScreens: PopActionScreensType.all,
