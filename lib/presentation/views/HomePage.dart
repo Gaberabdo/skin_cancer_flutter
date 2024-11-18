@@ -14,19 +14,25 @@ import '../../data/tflite/local_inference.dart';
 
 import '../widgets/InfoBoxes.dart';
 
-class HomePage extends StatelessWidget {
-  HomePage({super.key}) {
-    init();
-  }
+class HomePage extends StatefulWidget {
+  HomePage({super.key}) {}
 
-  init() async {
-    localInferenceModel = await LocalInferenceModel();
-    await localInferenceModel.init();
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    localInferenceModel = LocalInferenceModel();
+    localInferenceModel.init();
+    super.initState();
   }
 
   TfServing tfServing = TfServing(
       url: "https://54.93.172.29.nip.io/v1/models/skin_cancer:predict",
       labelsPath: "assets/labels.txt");
+
   late LocalInferenceModel localInferenceModel;
 
   // This widget is the root of your application.
@@ -347,8 +353,7 @@ class HomeScreen extends StatelessWidget {
                       padding: EdgeInsets.all(20),
                       child: Column(
                         children: [
-                          Text(
-                              "Error reaching server. Check internet connection."),
+                          Text(state.error,maxLines: 3,),
                           ElevatedButton(
                               onPressed: () =>
                                   BlocProvider.of<InferenceCubit>(context)
@@ -418,66 +423,110 @@ class HomeScreen extends StatelessWidget {
                             height: 10,
                           ),
                           Center(
-                            child: Container(
-                                width: MediaQuery.of(context).size.width * 0.85,
-                                height: 160,
-                                child: Card(
-                                  color: Colors.white,
-                                  elevation: 5,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: Row(
-                                      children: [
-                                        SizedBox(width: 10,),
-                                        Column(
+                              child: Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.85,
+                                  height: 160,
+                                  child: Card(
+                                      color: Colors.white,
+                                      elevation: 5,
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(10.0),
+                                        child: Row(
                                           children: [
-                                            Container(
-                                              width: 200,
-                                              child:
-                                                Text(style: TextStyle(fontSize: 16),
-                                                "It could be a ${state.lesionName} with the following probabilty:"),
-
+                                            SizedBox(
+                                              width: 10,
                                             ),
+                                            Column(
+                                              children: [
+                                                Container(
+                                                  width: 200,
+                                                  child: Text(
+                                                      style: TextStyle(
+                                                          fontSize: 16),
+                                                      "It could be a ${state.lesionName} with the following probabilty:"),
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              width: 20,
+                                            ),
+                                            Column(
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(
+                                                                    300.0),
+                                                        child: Container(
+                                                            width: 60,
+                                                            height: 60,
+                                                            color: Theme.of(
+                                                                    context)
+                                                                .colorScheme
+                                                                .primary,
+                                                            child: Center(
+                                                              child: state
+                                                                      .isMalignant
+                                                                  ? Text(
+                                                                      style: TextStyle(
+                                                                          color: Theme.of(context)
+                                                                              .colorScheme
+                                                                              .onPrimary,
+                                                                          fontWeight: FontWeight
+                                                                              .bold),
+                                                                      "Benign")
+                                                                  : Text(
+                                                                      style: TextStyle(
+                                                                          color: Theme.of(context)
+                                                                              .colorScheme
+                                                                              .onPrimary,
+                                                                          fontSize:
+                                                                              10,
+                                                                          fontWeight:
+                                                                              FontWeight.bold),
+                                                                      "Malginant"),
+                                                            ))),
+                                                  ],
+                                                ),
+                                                SizedBox(
+                                                  height: 5,
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    ClipRRect(
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(
+                                                                    300.0),
+                                                        child: Container(
+                                                            width: 60,
+                                                            height: 60,
+                                                            color: Theme.of(
+                                                                    context)
+                                                                .colorScheme
+                                                                .primary,
+                                                            child: Center(
+                                                              child: Text(
+                                                                  style: TextStyle(
+                                                                      color: Theme.of(
+                                                                              context)
+                                                                          .colorScheme
+                                                                          .onPrimary,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold),
+                                                                  "${state.probabilty} %"),
+                                                            ))),
+                                                  ],
+                                                )
+                                              ],
+                                            )
                                           ],
                                         ),
-                                        SizedBox(width: 20,),
-                                        Column(
-                                          children: [
-                                            Row(children: [ClipRRect(
-                                                borderRadius:
-                                                BorderRadius.circular(300.0),
-                                                child: Container(
-                                                    width: 60,
-                                                    height: 60,
-                                                    color: Theme.of(context)
-                                                        .colorScheme
-                                                        .primary,
-                                                    child: Center(
-                                                      child: state.isMalignant ? Text(style: TextStyle(color: Theme.of(context).colorScheme.onPrimary, fontWeight: FontWeight.bold),
-                                                          "Benign") : Text(style: TextStyle(color: Theme.of(context).colorScheme.onPrimary, fontSize: 10, fontWeight: FontWeight.bold),
-                                                          "Malginant"),
-                                                    ))),],),
-                                            SizedBox(height: 5,),
-                                            Row(children: [ClipRRect(
-                                                borderRadius:
-                                                BorderRadius.circular(300.0),
-                                                child: Container(
-                                                    width: 60,
-                                                    height: 60,
-                                                    color: Theme.of(context)
-                                                        .colorScheme
-                                                        .primary,
-                                                    child: Center(
-                                                      child: Text(style: TextStyle(color: Theme.of(context).colorScheme.onPrimary, fontWeight: FontWeight.bold),
-                                                          "${state.probabilty} %"),
-                                                    ))),],)
-                                          ],
-                                        )
-
-
-                                       ],
-                                                                    ),
-                          )))),
+                                      )))),
                           Padding(
                             padding: const EdgeInsets.only(left: 235),
                             child: ElevatedButton(
